@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
     var luotCuoi_2129: LuotNhan? = null
     var phienNhan_2129 = PhienNhan(daNhan_2129 = 0)
     private var boDemLuot = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnGhiNhan.setOnClickListener {
             ghiNhan_2129()
         }
+
         binding.btnXoa.setOnClickListener {
             xoa_2129()
         }
@@ -30,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         val tenChuan = binding.edtTen.text.toString().chuanHoaTen_2129()
         val soLuongStr = binding.edtSoLuong.text.toString().trim()
         val soLuong = soLuongStr.toIntOrNull()
+
         // Kiểm tra hợp lệ Tên (2-40 ký tự)
         if (tenChuan.length !in 2..40) {
             luotCuoi_2129 = null
@@ -59,6 +62,7 @@ class MainActivity : AppCompatActivity() {
         phienNhan_2129 = PhienNhan(daNhan_2129 = tongMoi)
         boDemLuot++
         val maMoi = QuyTacPhieu_2129.taoMaPhieu_2129(boDemLuot)
+
         luotCuoi_2129 = LuotNhan(
             maLuot_2129 = maMoi,
             hoTen_2129 = tenChuan,
@@ -79,4 +83,13 @@ class MainActivity : AppCompatActivity() {
         binding.edtSoLuong.text?.clear()
         binding.txtKetQua.text = ""
         binding.txtMaLuot.text = ""
-        }
+        capNhatUIPhien()
+    }
+
+    private fun capNhatUIPhien() {
+        val tong = phienNhan_2129.daNhan_2129
+        val conLai = 9 - tong
+        binding.txtTong.text = "Tổng đã nhận: $tong"
+        binding.txtConLai.text = "Chỗ còn lại: $conLai"
+    }
+}
