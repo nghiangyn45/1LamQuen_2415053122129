@@ -9,10 +9,10 @@
         android:id="@+id/txtSinhVien"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="NGUYỄN MINH NGHĨA - 2415053122129 - TRY20"
+        android:text="NGUYỄN MINH NGHĨA — 2415053122129 — TRY20"
         android:textSize="15sp"
         android:textStyle="bold"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="12dp" />
 
     <EditText
         android:id="@+id/edtTen"
@@ -34,15 +34,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:orientation="horizontal">
-
         <Button
-            android:id="@+id/btnKiemTra"
+            android:id="@+id/btnGhiNhan"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="6dp"
             android:layout_weight="1"
-            android:text="Kiểm tra" />
-
+            android:text="Ghi nhận" />
         <Button
             android:id="@+id/btnXoa"
             android:layout_width="0dp"
@@ -51,15 +49,27 @@
             android:layout_weight="1"
             android:text="Xóa" />
     </LinearLayout>
-
+    <TextView
+        android:id="@+id/txtTong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Tổng đã nhận: 0"
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/txtConLai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Chỗ còn lại: 9"
+        android:textSize="15sp" />
     <TextView
         android:id="@+id/txtKetQua"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:text=""
         android:textSize="16sp" />
-
     <TextView
         android:id="@+id/txtMaLuot"
         android:layout_width="match_parent"
